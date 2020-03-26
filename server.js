@@ -36,8 +36,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use('/serverport', ServerPortRouter);
-app.use('/projects', projectroutes);
 app.use('/users', userroutes);
+app.use('/projects', projectroutes);
+
 
 if(process.env.NODE_ENV === 'production') {
 

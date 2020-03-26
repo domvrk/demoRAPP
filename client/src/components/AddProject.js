@@ -4,8 +4,12 @@ import React from 'react';
 
 class AddProject extends React.Component {
   state = {
-    title: '',
-    body: ''
+    name: '',
+    owner: '',
+    status: '',
+    description: '',
+    file: ''
+
   };
 
   handleInputChange = e => {
@@ -16,7 +20,8 @@ class AddProject extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    if (this.state.title.trim() && this.state.body.trim()) {
+    console.log("test")
+    if (this.state.name.trim() && this.state.description.trim()) {
       this.props.onAddProject(this.state);
       this.handleReset();
     }
@@ -24,43 +29,71 @@ class AddProject extends React.Component {
 
   handleReset = () => {
     this.setState({
-      title: '',
-      body: ''
+      name: '',
+      owner: '',
+      status: '',
+      description: '',
+      file: ''
     });
   };
+
+
 
   render() {
     return (
       <div>
-        <form onSubmit={ this.handleSubmit }>
+
+        <h3>Add a project</h3>
+      <form onSubmit={ this.handleSubmit }>
+
+
           <div className="form-group">
-              <input
-              type="text"
-              placeholder="Title"
-              className="form-control"
-              name="title"
-              onChange={ this.handleInputChange }
-              value={ this.state.title }
-            />
+            <div className="col-7">
+              <label>Project Name</label>
+              <input type="name" className="form-control" placeholder="Enter project name" name="name" onChange={ this.handleInputChange } value={ this.state.name }/>
+            </div>
           </div>
+
           <div className="form-group">
-            <textarea
-              cols="19"
-              rows="8"
-              placeholder="Body"
-              className="form-control"
-              name="body"
-              onChange={ this.handleInputChange }
-              value={ this.state.body }>
-            </textarea>
+            <div className="col-7">
+              <label>Owner</label>
+              <input type="owner" className="form-control" placeholder="Add owner name" name="owner" onChange={ this.handleInputChange }
+            value={ this.state.owner }/>
+            </div>
           </div>
+
           <div className="form-group">
-            <button type="submit" className="btn btn-primary">Add Project</button>
-            <button type="button" className="btn btn-warning" onClick={ this.handleReset }>
+            <div className="col-7">
+              <label>Status</label>
+              <select className="form-control" id="status" >
+                <option value="Active">Active</option>
+                <option value="Complete">Complete</option>
+                </select>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <div className="col-7">
+              <label>Description</label>
+              <textarea className="form-control" id="description" rows="3" name="description" onChange={ this.handleInputChange }
+            value={ this.state.description }></textarea>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <div class="col-7">
+              <label>File Attachment</label>
+              <input type="file" className="form-control-file" id="attachment" name="file" onChange={ this.handleInputChange }
+            value={ this.state.file }/>
+            </div>
+          </div>
+        <div className="form-group">
+          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="button" className="btn btn-warning" onClick={ this.handleReset }>
               Reset
             </button>
-          </div>
-        </form>
+        </div>
+      </form>
       </div>
     );
   }

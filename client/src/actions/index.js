@@ -4,11 +4,11 @@ import { ADD_PROJECT, DELETE_PROJECT, FETCH_PROJECT, ADD_USER } from './types';
 import axios from 'axios';
 
 const apiUrl = 'http://localhost:5000/projects';
-const apiUserUrl = 'http://localhost:5000/users';
+const apiUserUrl = 'http://localhost:5000/user';
 
-export const createProject = ({ title, body }) => {
+export const createProject = ({ name, owner, status, description, file }) => {
   return (dispatch) => {
-    return axios.post(`${apiUrl}/add`, {title, body})
+    return axios.post(`${apiUrl}/add`, { name, owner, status, description, file })
       .then(response => {
         dispatch(createProjectSuccess(response.data))
       })
@@ -23,8 +23,11 @@ export const createProjectSuccess =  (data) => {
     type: ADD_PROJECT,
     payload: {
       _id: data._id,
-      title: data.title,
-      body: data.body
+      name: data.name,
+      owner: data.owner,
+      status: data.status,
+      description: data.description,
+      file: data.file
     }
   }
 };
@@ -73,9 +76,9 @@ export const fetchAllProjects = () => {
 
 
 ///User stuffs
-export const createUser = ({ name, email, password, date }) => {
+export const createUser = ({ name, lastname, email, password, date }) => {
   return (dispatch) => {
-    return axios.post(`${apiUserUrl}/add`, {name, email, password, date})
+    return axios.post(`${apiUserUrl}/add`, {name, lastname, email, password, date})
       .then(response => {
         dispatch(createProjectSuccess(response.data))
       })
@@ -91,6 +94,7 @@ export const createUserSuccess =  (data) => {
     payload: {
       _id: data._id,
       name: data.name,
+      lastname: data.lastname,
       email: data.email,
       password: data.password,
       date: data.date

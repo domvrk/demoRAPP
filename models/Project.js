@@ -3,10 +3,19 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for Post
 let Project = new Schema({
-  title: {
+  name: {
     type: String
   },
-  body: {
+  owner: {
+    type: String
+  },
+  status: {
+    type: String
+  },
+  description: {
+    type: String
+  },
+  file: {
     type: String
   }
 },{

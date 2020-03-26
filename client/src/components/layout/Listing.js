@@ -11,11 +11,17 @@ const styles = {
   borderRadius: '7px'
 };
 
-export default ({ project: { title, body, _id }, onDelete }) => {
+export default ({ project: { name, owner, status, description, file, _id }, onDelete }) => {
   return (
     <div style={ styles }>
-      <h2>{ title }</h2>
-      <p>{ body }</p>
+      <h2>{ name }</h2>
+      <p>owner: { owner }</p>
+      <p>status: { status }</p>
+      <p>Desc: { description }</p>
+      <p>file: { file }</p>
+      <button className="btn btn-primary" type="button">
+        View
+      </button>
       <button className="btn btn-danger" type="button" onClick={() => onDelete(_id)}>
         Remove
       </button>

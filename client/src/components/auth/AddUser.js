@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 //import { Link } from "react-router-dom";
-
+import './../layout/Navbar.css';
 //import axios from 'axios';
 
 class AddUser extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
-      email: "",
-      password: "",
-      password2: "",
+      name: '',
+      lastname: '',
+      email: '',
+      password: '',
+      password2: '',
 
     };
   }
@@ -30,10 +31,11 @@ handleSubmit = e => {
 
 handleReset = () => {
   this.setState({
-    name: "",
-    email: "",
-    password: "",
-    password2: ""
+    name: '',
+    lastname: '',
+    email: '',
+    password: '',
+    password2: ''
   });
 };
 
@@ -42,53 +44,39 @@ handleReset = () => {
 render() {
 
 return (
-  <form onSubmit= {this.handleSubmit}>
-    <div className="form-group">
-        <input
-        type="text"
-        placeholder="Name"
-        className="form-control"
-        name="name"
-        onChange={ this.handleInputChange }
-        value={ this.state.name }
-      />
-    </div>
-    <div className="form-group">
-        <input
-        type="text"
-        placeholder="Email"
-        className="form-control"
-        name="email"
-        onChange={ this.handleInputChange }
-        value={ this.state.email }
-      />
-    </div>
-    <div className="form-group">
-        <input
-        type="text"
-        placeholder="Password"
-        className="form-control"
-        name="password"
-        onChange={ this.handleInputChange }
-        value={ this.state.password }
-      />
-    </div>
-    <div className="form-group">
-        <input
-        type="text"
-        placeholder="Password2"
-        className="form-control"
-        name="password2"
-        onChange={ this.handleInputChange }
-        value={ this.state.password2 }
-      />
-    </div>
-    <div className="form-group">
-      <button type="submit" className="btn btn-primary">Add User</button>
-      <button type="button" className="btn btn-warning" onClick={ this.handleReset }>
-        Reset
-      </button>
-    </div>
+  <form onSubmit={ this.handleSubmit } >
+      <h3>Signup</h3>
+
+      <div className="form-group">
+          <label>First name</label>
+          <input type="text" className="form-control" placeholder="First name" name="name" onChange={ this.handleInputChange } value={ this.state.name } />
+      </div>
+
+      <div className="form-group">
+          <label>Last name</label>
+          <input type="text" className="form-control" placeholder="Last name" name="lastname" onChange={ this.handleInputChange } value={ this.state.lastname }/>
+      </div>
+
+      <div className="form-group">
+          <label>Email address</label>
+          <input type="email" className="form-control" placeholder="Enter email" name="email" onChange={ this.handleInputChange } value={ this.state.email } />
+      </div>
+
+      <div className="form-group">
+          <label>Password</label>
+          <input type="password" className="form-control" placeholder="Enter password" name="password" onChange={ this.handleInputChange } value={ this.state.password } />
+      </div>
+
+      <div className="form-group">
+          <label>Password</label>
+          <input type="password" className="form-control" placeholder="Re-Enter password" name="password2" onChange={ this.handleInputChange } value={ this.state.password2 } />
+      </div>
+      <div className="form-group">
+      <button type="submit" className="btn btn-primary mb-2">Sign Up</button>
+      </div>
+      <p className="forgot-password text-right">
+          Already registered sign in?
+      </p>
   </form>
     );
   }

@@ -7,9 +7,9 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 class Signup extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
+      <div >
+        <div >
+          <div >
             <CreateUser />
           </div>
 

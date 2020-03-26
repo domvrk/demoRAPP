@@ -7,12 +7,12 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 class Projects extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
+      <div >
+        <div >
+          <div >
             <CreateProject />
           </div>
-          <div className="col-md-6">
+          <div >
             <ProjectList />
           </div>
         </div>

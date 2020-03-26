@@ -4,7 +4,7 @@ import { ADD_PROJECT, DELETE_PROJECT, FETCH_PROJECT, ADD_USER } from './types';
 import axios from 'axios';
 
 const apiUrl = 'http://localhost:5000/projects';
-const apiUserUrl = 'http://localhost:5000/user';
+const apiUserUrl = 'http://localhost:5000/users';
 
 export const createProject = ({ name, owner, status, description, file }) => {
   return (dispatch) => {

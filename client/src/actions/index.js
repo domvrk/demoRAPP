@@ -1,6 +1,6 @@
 // index.js
 
-import { ADD_PROJECT, DELETE_PROJECT, FETCH_PROJECT, ADD_USER } from './types';
+import { ADD_PROJECT, DELETE_PROJECT, FETCH_PROJECT, ADD_USER, DELETE_USER, FETCH_USER } from './types';
 import axios from 'axios';
 
 const apiUrl = 'http://localhost:5000/projects';
@@ -80,7 +80,7 @@ export const createUser = ({ name, lastname, email, password, date }) => {
   return (dispatch) => {
     return axios.post(`${apiUserUrl}/add`, {name, lastname, email, password, date})
       .then(response => {
-        dispatch(createProjectSuccess(response.data))
+        dispatch(createUserSuccess(response.data))
       })
       .catch(error => {
         throw(error);
@@ -100,4 +100,44 @@ export const createUserSuccess =  (data) => {
       date: data.date
     }
   }
+};
+
+export const deleteUserSuccess = id => {
+  return {
+    type: DELETE_USER,
+    payload: {
+      id
+    }
+  }
+}
+
+export const deleteUser = id => {
+  return (dispatch) => {
+    return axios.get(`${apiUrl}/delete/${id}`)
+      .then(response => {
+        dispatch(deleteUserSuccess(response.data))
+      })
+      .catch(error => {
+        throw(error);
+      });
+  };
+};
+
+export const fetchUsers = (users) => {
+  return {
+    type: FETCH_USER,
+    users
+  }
+};
+
+export const fetchAllUsers = () => {
+  return (dispatch) => {
+    return axios.get(apiUserUrl)
+      .then(response => {
+        dispatch(fetchUsers(response.data))
+      })
+      .catch(error => {
+        throw(error);
+      });
+  };
 };

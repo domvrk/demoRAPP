@@ -6,6 +6,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Projects from "./components/layout/Projects"
 import Signup from "./components/layout/Signup"
+import AddProject from "./components/layout/AddProject"
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/projects" component={Projects} />
+          <Route exact path="/addproject" component={AddProject}/>
           <Route exact path="/signup" component={Signup} />
         </div>
       </Router>
@@ -24,3 +26,4 @@ class App extends Component {
   }
 }
 export default App;
+

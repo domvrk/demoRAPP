@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import './../layout/Navbar.css';
+
 //import { Link } from "react-router-dom";
 class Login extends Component {
   constructor() {
@@ -39,13 +41,17 @@ return (
       <h3>Login</h3>
 
       <div className="form-group">
+        <div className="col-7">
           <label>Email address</label>
           <input type="email" className="form-control" placeholder="Enter email" onChange={ this.handleEmailChange } value={ this.state.email }/>
+        </div>
       </div>
 
       <div className="form-group">
+        <div className="col-7">
           <label>Password</label>
           <input type="password" className="form-control" placeholder="Enter password" onChange={ this.handlePasswordChange } value={ this.state.password } />
+        </div>
       </div>
 
       <div className="form-group">

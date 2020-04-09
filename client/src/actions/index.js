@@ -113,7 +113,7 @@ export const deleteUserSuccess = id => {
 
 export const deleteUser = id => {
   return (dispatch) => {
-    return axios.get(`${apiUrl}/delete/${id}`)
+    return axios.get(`${apiUserUrl}/delete/${id}`)
       .then(response => {
         dispatch(deleteUserSuccess(response.data))
       })

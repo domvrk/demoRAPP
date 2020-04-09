@@ -8,16 +8,21 @@ import { Provider } from 'react-redux';
 
 import App from './App';
 import rootReducer from './reducers';
-import { fetchAllProjects } from './actions/index';
+import { fetchAllProjects, fetchAllUsers } from './actions/index';
 
 import * as serviceWorker from './serviceWorker';
 
+
+
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
+
+
 store.dispatch(fetchAllProjects());
+store.dispatch(fetchAllUsers());
 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={store} >
         <App />
     </Provider>, document.getElementById('root'));
 // If you want your app to work offline and load faster, you can change

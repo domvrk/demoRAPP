@@ -2,6 +2,7 @@ import React, { Component } from "react";
 //import { Link } from "react-router-dom";
 import './../layout/Navbar.css';
 //import axios from 'axios';
+//import UserList from '../../containers/UserList'
 
 class AddUser extends Component {
   constructor() {
@@ -77,7 +78,14 @@ return (
       <p className="forgot-password text-right">
           Already registered sign in?
       </p>
+
+
+
+
   </form>
+
+
+
     );
   }
 }

@@ -66,9 +66,11 @@ class AddProject extends React.Component {
           <div className="form-group">
             <div className="col-7">
               <label>Status</label>
-              <select className="form-control" id="status" required="true">
-                <option value="Active">Active</option>
-                <option value="Complete">Complete</option>
+              <select className="form-control" id="status" required="true" value={this.state.status} onChange={this.handleSelectChange}>
+              <option value=""></option>
+              <option value="Active">Active</option>
+              <option value="Complete">Complete</option>
+              <option value="Pending">Pending</option>
                 </select>
             </div>
           </div>

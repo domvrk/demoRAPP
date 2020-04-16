@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import './Navbar.css';
 
-class Navbar extends Component {
+class LogNavbar extends Component {
   constructor(props) {
         super(props);
         this.state = {
@@ -43,17 +43,15 @@ class Navbar extends Component {
 
 
 
+
   render() {
     const activeClasses = this.state.activeClasses.slice();
     return (
       <div className="topnav">
         <nav>
           <div>
-            <div>
-            <Link to="/" className={activeClasses[0]? "active" : "inactive"} onClick={() => this.addActiveClass(0)} >Home</Link>
-            </div>
-            <Link to="/login" className={activeClasses[1]? "active" : "inactive"} onClick={() => this.addActiveClass(1)} >Login</Link>
-            <Link to="/signup" className={activeClasses[2]? "active" : "inactive"} onClick={() => this.addActiveClass(2)} >Sign up</Link>
+
+            <Link to="/profile" className={activeClasses[0]? "active" : "inactive"} onClick={() => this.addActiveClass(0)} >Profile</Link>
             <Link to="/addproject" className={activeClasses[3]? "active" : "inactive"} onClick={() => this.addActiveClass(3)} > Add project</Link>
             <Link to="/projects" className={activeClasses[4]? "active" : "inactive"} onClick={() => this.addActiveClass(4)} >Projects</Link>
 
@@ -64,4 +62,4 @@ class Navbar extends Component {
     );
   }
 }
-export default Navbar;
+export default LogNavbar;

@@ -8,6 +8,10 @@ h3 {
   padding-left: 15px;
 }
 
+h4 {
+  padding-left: 15px;
+}
+
 h5 {
   text-align: center;
 }
@@ -79,4 +83,4 @@ img.center {
 .btn.btn-primary.mb-2{
 
   margin-left: 15px;
-} 
+}

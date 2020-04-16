@@ -8,7 +8,7 @@ const styles = {
   background: '#fafafa',
   margin: '.75rem auto',
   padding: '.6rem 1rem',
-  maxWidth: '500px',
+  maxWidth: '800px',
   borderRadius: '7px'
 };
 
@@ -26,6 +26,7 @@ export default ({ project: { name, owner, status, description, file, _id }, onDe
       <button className="btn btn-danger" type="button" onClick={() => onDelete(_id)}>
         Remove
       </button>
+
     </div>
   );
 };

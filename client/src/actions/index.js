@@ -76,9 +76,9 @@ export const fetchAllProjects = () => {
 
 
 ///User stuffs
-export const createUser = ({ name, lastname, email, password, date }) => {
+export const createUser = ({ name, lastname, email, password, password2, date }) => {
   return (dispatch) => {
-    return axios.post(`${apiUserUrl}/add`, {name, lastname, email, password, date})
+    return axios.post(`${apiUserUrl}/add`, {name, lastname, email, password, password2, date})
       .then(response => {
         dispatch(createUserSuccess(response.data))
       })
@@ -97,6 +97,7 @@ export const createUserSuccess =  (data) => {
       lastname: data.lastname,
       email: data.email,
       password: data.password,
+      password2: data.password2,
       date: data.date
     }
   }

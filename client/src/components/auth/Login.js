@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './../layout/Navbar.css';
+import './../layout/Style.css';
 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';

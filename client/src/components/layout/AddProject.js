@@ -3,7 +3,7 @@ import CreateProject from '../../containers/CreateProject';
 import ProjectList from '../../containers/ProjectList';
 
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './Navbar.css';
+import './Style.css';
 
 class AddProject extends Component {
   render() {

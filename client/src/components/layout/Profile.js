@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import './Style.css';
+
 class Profile extends Component {
   onLogoutClick = e => {
     e.preventDefault();
@@ -21,7 +23,7 @@ return (
               </p>
             </h4>
             <button
-              
+
               onClick={this.onLogoutClick}
               className="btn btn-primary mb-2"
             >

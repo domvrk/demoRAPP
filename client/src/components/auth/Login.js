@@ -106,7 +106,7 @@ return (
       </div>
 
       <button type="submit" className="btn btn-primary mb-2" onClick={this.forceUpdateHandler}>Submit</button>
-      <p className="forgot-password text-right">
+      <p className="forgot-password text-left">
           Forgot password?
       </p>
   </form>

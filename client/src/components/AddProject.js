@@ -28,6 +28,12 @@ class AddProject extends React.Component {
     }
   };
 
+  handleSelectChange = e => {
+    this.setState({
+      status: e.target.value
+    });
+  };
+
   handleReset = () => {
     this.setState({
       name: '',
